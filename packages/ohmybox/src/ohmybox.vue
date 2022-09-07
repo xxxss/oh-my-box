@@ -133,12 +133,12 @@ export default {
 				// 到达底部
 				this.lastPage = this.page
 				this.resetOffsetHandle()
-				this.$emit('change', this.lastPage, itemLength, itemLength, this._self)
+				this.$emit('change', itemLength, itemLength, this._self, this.lastPage)
 			}else{
 				this.lastPage = this.page
 				this.page++
 				this.resetOffsetHandle()
-				this.$emit('change', this.lastPage, this.page, itemLength, this._self)
+				this.$emit('change', this.page, itemLength, this._self, this.lastPage)
 			}
 		},
 		// 上一页
@@ -149,13 +149,13 @@ export default {
 				// 到达顶部
 				this.lastPage = this.page
 				this.page = 0
-				this.$emit('change', this.lastPage, this.page, itemLength, this._self)
+				this.$emit('change', this.page, itemLength, this._self, this.lastPage)
 				this.resetOffsetHandle()
 			}else{
 				this.lastPage = this.page
 				this.page--
 				this.resetOffsetHandle()
-				this.$emit('change', this.lastPage, this.page, itemLength, this._self)
+				this.$emit('change', this.page, itemLength, this._self, this.lastPage)
 			}
 		},
 		// 重置偏移量
