@@ -140,7 +140,7 @@ export default {
 				this.lastPage = this.page
 				this.resetOffsetHandle()
 				this.$emit('change', itemLength, itemLength, this._self, this.lastPage, this.direction)
-				this.$emit('toTop')
+				this.$emit('onBottom')
 			}else{
 				this.lastPage = this.page
 				this.page++
@@ -157,7 +157,7 @@ export default {
 				this.lastPage = this.page
 				this.page = 0
 				this.$emit('change', this.page, itemLength, this._self, this.lastPage, this.direction)
-				this.$emit('toBottom')
+				this.$emit('onTop')
 				this.resetOffsetHandle()
 			}else{
 				this.lastPage = this.page

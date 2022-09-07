@@ -90,12 +90,12 @@ import 'ohmybox/lib/ohmybox.css'
         <th>(当前页下标，总下标，当前项对象)</th>
     </tr>
     <tr>
-        <th>toTop</th>
+        <th>onTop</th>
         <th>到达顶部回调</th>
         <th></th>
     </tr>
     <tr>
-        <th>toBottom</th>
+        <th>onBottom</th>
         <th>到达底部回调</th>
         <th></th>
     </tr>
