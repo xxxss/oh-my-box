@@ -66,6 +66,7 @@ export default {
 		return {
 			startTime: 0, // 滚动开始时间戳
 			page: 0, // 当前item下标
+			lastPage: null,
 			defaultItemHeight: window.innerHeight, // 默认item高度
 			initialPosition: 0, // 每次 touchStart 滑动前的初始位置
 			currentPosition: 0, // touchMove 过程中的实际位置
@@ -130,12 +131,14 @@ export default {
 			let itemLength = document.querySelector('.ohmybox-item-wrap').children.length;
 			if(itemLength == this.page + 1){
 				// 到达底部
+				this.lastPage = this.page
 				this.resetOffsetHandle()
-				this.$emit('change', itemLength, itemLength, this._self)
+				this.$emit('change', this.lastPage, itemLength, itemLength, this._self)
 			}else{
+				this.lastPage = this.page
 				this.page++
 				this.resetOffsetHandle()
-				this.$emit('change', this.page, itemLength, this._self)
+				this.$emit('change', this.lastPage, this.page, itemLength, this._self)
 			}
 		},
 		// 上一页
@@ -144,13 +147,15 @@ export default {
 			let itemLength = document.querySelector('.ohmybox-item-wrap').children.length;
 			if (this.page <= 0) {
 				// 到达顶部
+				this.lastPage = this.page
 				this.page = 0
-				this.$emit('change', this.page, itemLength, this._self)
+				this.$emit('change', this.lastPage, this.page, itemLength, this._self)
 				this.resetOffsetHandle()
 			}else{
+				this.lastPage = this.page
 				this.page--
 				this.resetOffsetHandle()
-				this.$emit('change', this.page, itemLength, this._self)
+				this.$emit('change', this.lastPage, this.page, itemLength, this._self)
 			}
 		},
 		// 重置偏移量
