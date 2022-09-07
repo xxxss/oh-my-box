@@ -60,6 +60,12 @@ export default {
 		},
 		click: {
 			default: ()=>{}
+		},
+		toTop: {
+			default: ()=>{}
+		},
+		toBottom: {
+			default: ()=>{}
 		}
 	},
 	data: () => {
