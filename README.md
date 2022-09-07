@@ -82,12 +82,22 @@ import 'ohmybox/lib/ohmybox.css'
     <tr>
         <th>change</th>
         <th>翻页回调方法</th>
-        <th>(翻页前下标，当前页下标，总下标，当前项对象)</th>
+        <th>(翻页前下标，当前页下标，总下标，当前项对象，翻页方向(prev, next))</th>
     </tr>
     <tr>
         <th>click</th>
         <th>点击方法</th>
         <th>(当前页下标，总下标，当前项对象)</th>
+    </tr>
+    <tr>
+        <th>toTop</th>
+        <th>到达顶部回调</th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>toBottom</th>
+        <th>到达底部回调</th>
+        <th></th>
     </tr>
     <tr>
         <th>this.$refs.ohmybox.forceScrollHandle</th>
